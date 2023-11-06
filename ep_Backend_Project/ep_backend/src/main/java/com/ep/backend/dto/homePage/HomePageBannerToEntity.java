@@ -13,7 +13,7 @@ public class HomePageBannerToEntity {
 		homePageBanner.setHomePageBannerText(homePageBannerDto.getHomePageBannerButtonText());
 		homePageBanner.setHomePageBannerButtonText(homePageBannerDto.getHomePageBannerButtonText());
 		homePageBanner.setHomePageBannerButtonurl(homePageBannerDto.getHomePageBannerButtonurl());
-		homePageBanner.equals(homePageBanner);
+		homePageBanner.setStatus(homePageBannerDto.isStatus());
 		
 		return homePageBanner;
 	}
@@ -21,6 +21,11 @@ public class HomePageBannerToEntity {
 	public HomePageBannerDto homePageBannerToDto(HomePageBanner homePageBanner) {
 		
 		HomePageBannerDto homePageBannerDto = new HomePageBannerDto();
+		homePageBannerDto.setHomePageBannerHeading(homePageBanner.getHomePageBannerHeading());
+		homePageBannerDto.setHomePageBannerText(homePageBanner.getHomePageBannerText());
+		homePageBannerDto.setHomePageBannerButtonText(homePageBanner.getHomePageBannerButtonText());
+		homePageBannerDto.setHomePageBannerButtonurl(homePageBanner.getHomePageBannerButtonurl());
+		homePageBannerDto.setStatus(homePageBanner.isStatus());
 		
 		return homePageBannerDto;
 	}

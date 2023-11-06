@@ -15,4 +15,5 @@ public class HomePageBannerDto {
 	private String homePageBannerText;
 	private String homePageBannerButtonText;
 	private String homePageBannerButtonurl;
+	private boolean status;
 }

@@ -18,5 +18,5 @@ public class HomePageBanner {
 	private String homePageBannerText;
 	private String homePageBannerButtonText;
 	private String homePageBannerButtonurl;
-
+	private boolean status;
 }
