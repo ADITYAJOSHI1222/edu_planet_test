@@ -75,7 +75,7 @@ public class StudentController {
 //		delete
 
 	    @DeleteMapping("/{studentId}")
-	    public ResponseEntity<Void> deleteStudent(@PathVariable("studentId") String studentId) {
+	    public ResponseEntity<Void> deleteStudent(@PathVariable String studentId) {
 	        studentService.deleteStudent(studentId);
 	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	    }

@@ -4,7 +4,6 @@ package com.ep.backend.services.Impl.successStory;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ep.backend.Exception.ResourceNotFoundException;
@@ -21,7 +20,6 @@ public class IGCSE_ResultsServiceImpl implements IGCSE_ResultsService{
 	private final IGCSE_ResultsRepo igcse_resultsRepo;
 	private final IGCSE_ResultsDtoToEntity igcse_resultsDtoToEntity;
 	
-	@Autowired
 	public IGCSE_ResultsServiceImpl(IGCSE_ResultsRepo igcse_resultsRepo, IGCSE_ResultsDtoToEntity igcse_resultsDtoToEntity) {
 		super();
 		this.igcse_resultsRepo = igcse_resultsRepo;

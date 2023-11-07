@@ -11,8 +11,8 @@ import com.ep.backend.entities.successStory.ImageStorageProperties;
 
 @Service
 public interface HomePageBannerService {
-	List<HomePageBannerDto> getAllHomePageBanners();
-	HomePageBannerDto addHomePageBanner(HomePageBanner homePageBanner);
+//	List<HomePageBannerDto> getAllHomePageBanners();
+	HomePageBannerDto addHomePageBanner(HomePageBannerDto homePageBannerDto);
 	String FileStorageService(ImageStorageProperties imageStorageProperties, MultipartFile file);
-	HomePageBannerDto deleteHomePageBanner();
+//	HomePageBannerDto deleteHomePageBanner();
 }

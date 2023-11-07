@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ep.backend.Exception.ResourceNotFoundException;
@@ -22,7 +21,6 @@ public class MYP_ResultsServiceImpl implements MYP_ResultsService{
 	private final MYP_ResultsRepo myp_resultsRepo;
 	private final MYP_ResultsDtoToEntity myp_resultsDtoToEntity;
 	
-	@Autowired
 	public MYP_ResultsServiceImpl(MYP_ResultsRepo myp_resultsRepo, MYP_ResultsDtoToEntity myp_resultsDtoToEntity) {
 		super();
 		this.myp_resultsRepo = myp_resultsRepo;
@@ -72,7 +70,7 @@ public boolean deleteSingleMYP_Result(String studentName) {
 	
 	Optional<MYP_Results> myp_resultsToDelete = this.myp_resultsRepo.findByStudentName(studentName);
 	
-	if(!myp_resultsToDelete.isEmpty()) {
+	if(myp_resultsToDelete.isPresent()) {
 		MYP_Results myp_resultsToDelete1 = myp_resultsToDelete.get();
 		this.myp_resultsRepo.delete(myp_resultsToDelete1);
 		return true;

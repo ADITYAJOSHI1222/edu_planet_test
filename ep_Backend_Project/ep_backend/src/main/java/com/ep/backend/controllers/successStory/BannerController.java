@@ -45,7 +45,7 @@ public class BannerController {
 	
 	
 	@PostMapping
-	public ResponseEntity<String> createBanner (@RequestParam("model") String jsonObject, @RequestParam("file") MultipartFile file){
+	public ResponseEntity<String> createBanner (@RequestParam("model") String jsonObject, @RequestParam MultipartFile file){
 //		ImageStorageProperties imageStorageProperties = new ImageStorageProperties();
 		BannerDto bannerDto = new BannerDto();
 		String responseString = null;
@@ -67,7 +67,7 @@ public class BannerController {
 		}
 		return ResponseEntity.ok(responseString);
 	}
-	
+	 
 	@GetMapping
 	public List<BannerDto> getBanners() {
 	    List<BannerDto> bannerDto = bannerService.getAllBanners();

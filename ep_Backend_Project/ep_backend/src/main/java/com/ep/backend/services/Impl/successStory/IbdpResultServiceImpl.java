@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ep.backend.Exception.ResourceNotFoundException;
@@ -21,7 +20,6 @@ public class IbdpResultServiceImpl implements IbdpResultService {
     private final IbdpResultRepo ibdpResultRepo;
     private final IbdpResultDtoToEntity ibdpResultDtoToEntity;
 
-    @Autowired
     public IbdpResultServiceImpl(IbdpResultRepo ibdpResultRepo, IbdpResultDtoToEntity ibdpResultDtoToEntity) {
         this.ibdpResultRepo = ibdpResultRepo;
         this.ibdpResultDtoToEntity = ibdpResultDtoToEntity;
@@ -110,7 +108,7 @@ public class IbdpResultServiceImpl implements IbdpResultService {
         Optional<IbdpResult> ibdpResultsToDelete = this.ibdpResultRepo.findByStudentName(studentName);
 
         // Check if any matching entities were found
-        if (!ibdpResultsToDelete.isEmpty()) {
+        if (ibdpResultsToDelete.isPresent()) {
             // Assuming you want to delete the first matching entity, you can do:
             IbdpResult ibdpResultToDelete = ibdpResultsToDelete.get(); // Get the first matching entity
             this.ibdpResultRepo.delete(ibdpResultToDelete); // Delete the entity

@@ -6,7 +6,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.hibernate.annotations.FetchProfile.FetchOverride;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ep.backend.Exception.ResourceNotFoundException;
@@ -23,7 +22,6 @@ public class CompetitionResultsServiceImpl implements CompetitionResultsService 
 	private final CompetitionResultsRepo competitionResultsRepo;
 	private final CompetitionResultsDtoToEntity competitionResultsDtoToEntity;
 	
-	@Autowired
 	public CompetitionResultsServiceImpl(CompetitionResultsRepo competitionResultsRepo,
 			CompetitionResultsDtoToEntity competitionResultsDtoToEntity) {
 		super();
@@ -70,7 +68,7 @@ public class CompetitionResultsServiceImpl implements CompetitionResultsService 
 	public boolean deleteSingleCompetitionResults(String studentName) {
 		
 		Optional<CompetitionResults> competitonResultsToDelete = this.competitionResultsRepo.findByStudentName(studentName);
-		if(!competitonResultsToDelete.isEmpty()) {
+		if(competitonResultsToDelete.isPresent()) {
 			CompetitionResults competitionResultsToDelete1 = competitonResultsToDelete.get();
 			this.competitionResultsRepo.delete(competitionResultsToDelete1);
 			return true;
