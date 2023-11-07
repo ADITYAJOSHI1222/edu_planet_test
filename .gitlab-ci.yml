@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - deploy
+
+backend_build:
+  stage: build
+  script:
+    - mvn clean package
+    # Use 'mvn' with the appropriate goals for your build process.
+
+backend_test:
+  stage: test
+  script:
+    - mvn test
+    # Use 'mvn' with the appropriate goals for running tests.
+
+backend_deploy:
+  stage: deploy
+  script:
+    - scp -i $AWS_PRIVATE_KEY target/your-backend.jar ec2-user@3.108.21.241:/path/to/deployment/
+    # Use 'scp' to copy the built JAR file to your server with SSH key authentication.
+
+    - ssh -i $AWS_PRIVATE_KEY ec2-user@3.108.21.241 "java -jar /path/to/deployment/your-backend.jar"
+    # Run your Java application on the server using 'java -jar' with SSH key authentication.
