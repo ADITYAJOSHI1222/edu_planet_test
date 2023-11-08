@@ -38,6 +38,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\New folder\New folder\education_planetcms"/>
 			<item value="D:\Diksha\Education_Planet\education_planetcms\ep_Backend_Project\ep_backend"/>
 		</list>
 	</section>
