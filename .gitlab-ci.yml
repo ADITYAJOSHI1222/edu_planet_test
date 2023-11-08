@@ -8,14 +8,14 @@ variables:
 
 backend_build:
   stage: build
-  image: maven:3.6-jdk-11  # Use a Maven image with Java 11.
+  image: maven:3.8.4-jdk-11  # Use a Maven image with Java 11.
 
   script:
     - mvn clean package
 
 backend_test:
   stage: test
-  image: maven:3.6-jdk-11  # Use the same Maven image for testing.
+  image: maven:3.8.4-jdk-11  # Use the same Maven image for testing.
 
   script:
     - mvn test
