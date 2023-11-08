@@ -100,7 +100,7 @@ public class SecurityConfig {
                  .requestMatchers(HttpMethod.GET, "/studentAPI")
                  .permitAll()
                  .requestMatchers(HttpMethod.DELETE, "/studentAPI/**").hasRole("ADMIN")
-               
+                 
                  
 //                 .requestMatchers(HttpMethod.GET)
 //                 .permitAll()
@@ -155,7 +155,7 @@ public class SecurityConfig {
 	        corsConfiguration.addAllowedHeader("Content-Type");
 	        corsConfiguration.addAllowedHeader("Accept");
 	        corsConfiguration.addAllowedMethod("GET");
-	        corsConfiguration.addAllowedMethod("POST");
+	        corsConfiguration.addAllowedMethod("POST");    
 	        corsConfiguration.addAllowedMethod("PUT");
 	        corsConfiguration.addAllowedMethod("DELETE");
 	        corsConfiguration.addAllowedMethod("OPTIONS");
