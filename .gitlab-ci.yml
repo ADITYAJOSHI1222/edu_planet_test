@@ -13,6 +13,10 @@ backend_build:
   script:
     - mvn clean package
 
+  artifacts:
+    paths:
+      - /builds/eduplanet2/education_planetcms/Edu_planet/ep_Backend_Project/ep_backend
+      
 backend_test:
   stage: test
   image: maven:3.8.4-jdk-11  # Use the same Maven image for testing.
