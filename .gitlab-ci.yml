@@ -24,7 +24,7 @@ backend_deploy:
   stage: deploy
   only:
     - master  # You might want to deploy only when changes are pushed to the master branch.
-
+  
   script:
     - #apt-get update && apt-get install -y openssh-client  # Install SSH client for scp and ssh commands.
     - scp -i $AWS_PRIVATE_KEY target/your-backend.jar ec2-user@3.108.21.241:/path/to/deployment/
