@@ -2,8 +2,6 @@ image: abhishek/maven-abhishek-docker-agent:v1
 variables:
   AWS_PRIVATE_KEY: $AWS_PRIVATE_KEY  # Define your AWS private key variable here.
 
-before_script:
-  cd education_planetcms/ep_Backend_Project/ep_backend
 
 stages:
   - build
